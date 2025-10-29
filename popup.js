@@ -33,6 +33,7 @@ async function saveSettings() {
         console.debug('Saving settings...');
         if (!validateUrlTemplate(urlTemplateInput.value)) {
             throw new Error('URL Template must include the placeholder {word}');
+            return;
         }
         const urlTemplate = urlTemplateInput.value;
         const openInIFrame = copyInputRadio.value;
