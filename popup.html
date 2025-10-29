@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="popup.css" />
+    <title>WordSearch</title>
+</head>
+<body>
+    <div class="card">
+        <header>
+            <div class="logo" aria-hidden="false">
+                <img src="icons/icon.svg" alt="WordSearch Icon" width="32" height="32">
+                <div class="title">
+                    <h1>WordSearch</h1>
+                    <small>Quick selection search</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <hr>
+            <section>
+                <h2>How to Use</h2>
+                <ul>
+                    <li>Highlight some text, right-click it, and choose "Search with WordSearch".</li>
+                    <li>Or you can highlight some text and then use the shortcut <strong>Alt+Shift+F</strong>.</li>
+                </ul>
+                <small class="note">If the highlighted text contains spaces, they will be removed.</small>
+            </section>
+            <hr>
+            <section>
+                <h2>Settings</h2>
+                <form id="settingsForm" autocomplete="off" novalidate>
+                    <label class="formItem" for="urlTemplate">
+                        <span>Search URL template</span>
+                        <input type="url" id="urlTemplate" name="urlTemplate" placeholder="https://example.com/search?q={word}" required>
+                        <small>Include <code>{word}</code> where you want the selected text inserted into the URL before the page is opened.</small>
+                    </label>
+
+                    <label class="formItem checkboxLabel" for="openInIFrame">
+                        <input type="radio" id="openInIFrame" name="openInIFrame" value="false">
+                        <span>If the checkbox is checked, then the search will open in a iframe near your cursor instead of in a new tab.</span>
+                    </label>
+
+                    <div>
+                        <span id="ErrorMessage"></span>
+                        <span id="SuccessMessage"></span>
+                        <button type="button" class="primary" id="saveButton">Save</button>
+                    </div>
+                </form>
+            </section>
+            <hr>
+        </main>
+
+        <footer>
+            <span>Created by Taylor, 2025 | version 0.1.4</span>
+            <span class="feedback">Got feedback? Send me a message on discord: <b>.apfels</b> (the period is important)!</span>
+        </footer>
+    </div>
+</body>
+<script src="popup.js"></script>
+</html>

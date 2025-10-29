@@ -1,0 +1,47 @@
+{
+  "name": "WordSearch",
+  "version": "0.1.4",
+  "manifest_version": 3,
+  "description": "Search highlighted words quickly using context menu (the menu that pops up when you right-click) or by using the keybind.",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "clipboardWrite",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "WordSearch"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "custom-keybind-search" : {
+      "suggested_key": {
+        "default": "Alt+Shift+F",
+        "mac": "Alt+Shift+F"
+      },
+      "description": "Search highlighted word"
+    } 
+  }
+}
